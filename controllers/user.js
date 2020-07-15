@@ -193,10 +193,6 @@ function activateUser(req, res) {
     const { id } = req.params;
     const { active } = req.body;
 
-    console.log(id);
-    console.log(active);
-    
-    
     User.findByIdAndUpdate(id, { active }, (err, userStored) =>{
         if(err) {
             res.status(500).send({ message: "Error del servidor." });
